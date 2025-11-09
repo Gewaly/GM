@@ -1,0 +1,26 @@
+.sidebar {
+  height: calc(100vh - 42px);
+  background-color: #fff;
+}
+
+.sidebar .menu-text {
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+}
+
+:host-context(.sidebar-collapsed) .menu-text {
+  opacity: 0;
+}
+a{
+  text-decoration: none;
+color: black;
+cursor: pointer;
+}
+.link{
+  cursor: pointer;
+}
+
