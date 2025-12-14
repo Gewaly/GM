@@ -29,6 +29,19 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/settings/settings.component').then((m) => m.SettingsComponent),
       },
+      {
+
+        path: 'profile',
+        loadComponent: () =>
+          import('../app/shared/components/profile/profile.component').then((m) => m.ProfileComponent),
+      },
+      {
+
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./pages/dashboard/dashboard.component').then((m) => m.DashboardComponent),
+      },
+
     ]
   },
   {
@@ -36,8 +49,14 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('../app/shared/components/login/login.component').then((m) => m.LoginComponent),
-
   },
+  {
+
+    path: 'signup',
+    loadComponent: () =>
+      import('../app/shared/components/sign-up/sign-up.component').then((m) => m.SignUpComponent),
+  },
+
   {
     path: '**',
     loadComponent: () =>

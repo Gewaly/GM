@@ -1,6 +1,6 @@
 .sidebar {
-  height: calc(100vh - 42px);
-  background-color: #fff;
+  background-color: var(--bg-color2);
+  height: calc(100vh - 97px);
 }
 
 .sidebar .menu-text {
@@ -17,7 +17,7 @@
 }
 a{
   text-decoration: none;
-color: black;
+color: var(--text-color);
 cursor: pointer;
 }
 .link{

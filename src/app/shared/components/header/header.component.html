@@ -1,4 +1,4 @@
-<nav class="header d-flex align-items-center justify-content-between shadow-sm">
+<nav class="header d-flex align-items-center justify-content-between">
   <div class="d-flex align-items-center p-2">
     <button class="btn p-0 mx-2" aria-label="Menu" (click)="menuToggle.emit()">
       <i class="fa-solid fa-bars fs-5"></i>
@@ -6,11 +6,41 @@
     <span class="h2 mb-0 fw-bolder">GM</span>
   </div>
   <div class="d-flex align-items-center p-2">
-    <button class="btn p-0 mx-2">
-      <i class="fa-solid fa-light fa-moon"></i>
+    <button
+      class="btn p-0 mx-2"
+      (click)="toggleTheme()"
+      aria-label="Toggle Theme"
+    >
+      <i [ngClass]="isDarkTheme ? 'fa-solid fa-sun' : 'fa-regular fa-moon'"></i>
     </button>
-    <button class="btn p-0 mx-2">
-      <i class="fa-solid fa-ellipsis-vertical"></i>
-    </button>
+
+    <div class="dropdown">
+      <button
+        class="btn p-0 mx-2"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li class="d-flex align-items-center">
+          <a class="dropdown-item" routerLink="/profile">
+            <i class="fa-solid fa-user me-2"></i> Profile</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/settings"
+            ><i class="fa-solid fa-gear me-2"></i>Settings</a
+          >
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+          <a class="dropdown-item text-danger" routerLink="/login"
+            ><i class="fa-solid fa-person-running me-2"></i>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

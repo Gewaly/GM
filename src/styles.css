@@ -3,6 +3,21 @@
 @import "primeicons/primeicons.css";
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root {
+  --bg-color: #f2f2f2;
+  --bg-color2: #fff;
+  --text-color: #000000;
+  --text-color2: grey;
+  --primary-color: #1976d2;
+}
+/* Dark Theme */
+.dark-theme {
+  --bg-color: #121212;
+  --bg-color2: #292929;
+  --text-color: #ffffff;
+  --text-color2: rgb(178, 176, 176);
+  --primary-color: #90caf9;
+}
 
 *{
     box-sizing: border-box;
@@ -11,14 +26,26 @@
 font-family: "Cairo", "Inter", sans-serif;
 
 
+
 }
 body {
+   background-color: var(--bg-color);
+    color: var(--text-color);
 
-
-    background-color: #f5f5f5;
 }
 .fa-solid{
-  color: grey;
+  color: var(--text-color2);
 
 }
-
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
+  background-color: #ebebeb !important;
+  color: inherit !important;
+}
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}

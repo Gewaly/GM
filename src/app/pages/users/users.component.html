@@ -1,3 +1,29 @@
-<p>
-  users works!
-</p>
+<section class="custom-container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-4">
+    @for (user of users; track user.id) {
+
+    <p-card
+      [header]="user.firstName + ' ' + user.lastName"
+      [subheader]="user.phone"
+    >
+      <ng-template pTemplate="header">
+        <img alt="Card" class="p-5" [src]="user.image" />
+      </ng-template>
+      <p>{{ user.university }}</p>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-center gap-2 mx-4 mb-2">
+          <p-button
+            label="Details..."
+            class="p-4 mx-5"
+            class="w-full"
+            styleClass="w-full rounded px-3"
+          />
+        </div>
+      </ng-template>
+    </p-card>
+
+    } @empty {
+    <li>There are no users.</li>
+    }
+  </div>
+</section>

@@ -1,3 +1,8 @@
 .header{
-  background-color: #fff;
+    background-color: var(--bg-color2);
+  color: var(--text-color);
+}
+*{
+  background-color: var(--bg-color2);
+  color: var(--text-color);
 }
