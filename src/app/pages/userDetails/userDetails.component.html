@@ -1,0 +1,49 @@
+<div class="user-details-container" *ngIf="user">
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <!-- Header -->
+    <div class="profile-header">
+      <img [src]="user.image" alt="User Image" />
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+      <p class="username">&#64;{{ user.username }}</p>
+    </div>
+
+    <!-- Body -->
+    <div class="profile-body">
+      <!-- Personal Info -->
+      <div class="info-section">
+        <h3>Personal Information</h3>
+        <div class="info-grid">
+          <div><span>Maiden Name:</span> {{ user.maidenName }}</div>
+          <div><span>Age:</span> {{ user.age }}</div>
+          <div><span>Gender:</span> {{ user.gender }}</div>
+          <div><span>Birth Date:</span> {{ user.birthDate }}</div>
+          <div><span>Blood Group:</span> {{ user.bloodGroup }}</div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="info-section">
+        <h3>Contact Information</h3>
+        <div class="info-grid">
+          <div><span>Email:</span> {{ user.email }}</div>
+          <div><span>Phone:</span> {{ user.phone }}</div>
+        </div>
+      </div>
+
+      <!-- Physical Info -->
+      <div class="info-section">
+        <h3>Physical Information</h3>
+        <div class="info-grid">
+          <div><span>Height:</span> {{ user.height }} cm</div>
+          <div><span>Weight:</span> {{ user.weight }} kg</div>
+          <div><span>Eye Color:</span> {{ user.eyeColor }}</div>
+          <div>
+            <span>Hair:</span>
+            {{ user.hair.color }} - {{ user.hair.type }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

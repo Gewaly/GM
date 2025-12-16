@@ -1,29 +1,51 @@
-<section class="custom-container">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-4">
+<section class="p-4">
+  <div class="grid">
     @for (user of users; track user.id) {
 
-    <p-card
-      [header]="user.firstName + ' ' + user.lastName"
-      [subheader]="user.phone"
-    >
-      <ng-template pTemplate="header">
-        <img alt="Card" class="p-5" [src]="user.image" />
-      </ng-template>
-      <p>{{ user.university }}</p>
-      <ng-template pTemplate="footer">
-        <div class="flex justify-center gap-2 mx-4 mb-2">
-          <p-button
-            label="Details..."
-            class="p-4 mx-5"
-            class="w-full"
-            styleClass="w-full rounded px-3"
-          />
+    <div class="col-12 md:col-6 lg:col-4 xl:col-3">
+      <p-card class="h-full">
+        <!-- Header -->
+        <ng-template pTemplate="header">
+          <div class="flex flex-column align-items-center gap-2">
+            <p-avatar [image]="user.image" size="large" shape="circle">
+            </p-avatar>
+
+            <div class="text-center">
+              <h4 class="m-0">{{ user.firstName }} {{ user.lastName }}</h4>
+              <small class="text-500"> &#64;{{ user.username }} </small>
+            </div>
+          </div>
+        </ng-template>
+
+        <!-- Content -->
+        <div class="text-center mt-3">
+          <p class="m-0">
+            <i class="pi pi-phone mr-2"></i>
+            {{ user.phone }}
+          </p>
+
+          <p class="text-500 mt-2">
+            <i class="pi pi-building mr-2"></i>
+            {{ user.university || "—" }}
+          </p>
         </div>
-      </ng-template>
-    </p-card>
+
+        <!-- Footer -->
+        <ng-template pTemplate="footer">
+          <p-button
+            label="View Details"
+            icon="pi pi-arrow-right"
+            severity="secondary"
+            styleClass="w-full"
+            (click)="onDetail(user.id)"
+          >
+          </p-button>
+        </ng-template>
+      </p-card>
+    </div>
 
     } @empty {
-    <li>There are no users.</li>
+    <div class="col-12 text-center text-500">No users found</div>
     }
   </div>
 </section>

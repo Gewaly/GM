@@ -15,6 +15,9 @@ export class AuthService {
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users`)
   }
+  getSingleUser(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/users/${id}`);
+  }
 
 
 }

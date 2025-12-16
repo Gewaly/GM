@@ -4,17 +4,22 @@ import { UserResponse } from '../../core/interfaces/user-response';
 import { CardModule } from "primeng/card";
 import { Button } from "primeng/button";
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { AvatarModule } from 'primeng/avatar';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
   standalone: true,
-  imports: [CardModule, Button, CommonModule],
+  imports: [CardModule, Button, CommonModule,
+    AvatarModule,
+    ButtonModule],
 })
 export class UsersComponent implements OnInit {
   users!: UserResponse[];
-  constructor(private _AuthService: AuthService) { }
+  constructor(private _AuthService: AuthService, private router: Router) { }
 
 
   ngOnInit() {
@@ -30,6 +35,10 @@ export class UsersComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+  onDetail(id: number) {
+    this.router.navigate(['/userDetails', id]);
+
   }
 
 
