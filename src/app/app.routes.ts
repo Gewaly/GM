@@ -25,6 +25,12 @@ export const routes: Routes = [
           import('./pages/users/users.component').then((m) => m.UsersComponent),
       },
       {
+        path: 'userDetails/:id',
+        loadComponent: () =>
+          import('./pages/userDetails/userDetails.component').then((m) => m.UserDetailsComponent),
+
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./pages/settings/settings.component').then((m) => m.SettingsComponent),

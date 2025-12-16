@@ -3,10 +3,11 @@ export interface UserResponse {
   total: number;
   skip: number;
   limit: number;
-  id: string;
+  id: number;
   image: string;
   university: string;
   lastName: string;
+  username: string;
   firstName: string;
   email: string;
   phone: string;
