@@ -1,16 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NgxEchartsDirective } from 'ngx-echarts';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
+import { RouterModule } from '@angular/router';
+
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, CardModule, NgxEchartsDirective],
+  imports: [CommonModule,
+    RouterModule,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
