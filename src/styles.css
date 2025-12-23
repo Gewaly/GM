@@ -1,4 +1,3 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
@@ -12,7 +11,15 @@
   --text-color: #000000;
   --text-color2: grey;
   --primary-color: #1976d2;
+
+  /* Glassmorphism Variables (Light) */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  /* More transparent */
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --backdrop-blur: blur(10px);
 }
+
 /* Dark Theme */
 .dark-theme {
   --bg-color: #121212;
@@ -20,35 +27,63 @@
   --text-color: #ffffff;
   --text-color2: rgb(178, 176, 176);
   --primary-color: #90caf9;
+
+  /* Glassmorphism Variables (Dark) */
+  --glass-bg: rgba(41, 41, 41, 0.4);
+  /* More transparent dark */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-font-family: "Cairo", "Inter", sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", "Inter", sans-serif;
 
 
 
 }
+
 body {
-   background-color: var(--bg-color);
-    color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
 }
-.fa-solid{
+
+.fa-solid {
   color: var(--text-color2);
 
 }
+
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:active {
   background-color: #ebebeb !important;
   color: inherit !important;
 }
+
+/* Glassmorphism Utility */
+.glass-style,
+.p-card,
 .card {
-    background: var(--surface-card);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  /* Smooth corners */
+}
+
+/* Override PrimeNG Card specifically to remove its default background */
+.p-card {
+  background: var(--glass-bg) !important;
+  color: var(--text-color);
+}
+
+.p-card .p-card-content,
+.p-card .p-card-header,
+.p-card .p-card-footer {
+  background: transparent !important;
 }

@@ -1,26 +1,59 @@
-.main-wrapper {
+.app-layout-container {
   display: flex;
-  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  /* Prevent full page scroll */
+}
+
+.layout-header {
+  flex: 0 0 auto;
+  /* Fixed height based on content */
+  z-index: 1000;
+}
+
+.layout-body {
+  flex: 1;
+  /* Takes all remaining vertical space */
+  display: flex;
+  overflow: hidden;
+  /* Contains the scrollable content */
+  position: relative;
+}
+
+.layout-footer {
+  flex: 0 0 auto;
+  /* Fixed height based on content */
+  z-index: 1000;
 }
 
 app-sidebar {
   width: 250px;
+  height: 100%;
   transition: width 0.3s ease-in-out;
-  overflow: hidden;
-  background: var(--bg-color2);
-  border-right: 1px solid var(--text-color1);
+  overflow-y: auto;
+  /* Independent scroll for sidebar if needed */
+  border-right: 1px solid var(--glass-border);
+  flex-shrink: 0;
 }
 
 .sidebar-collapsed app-sidebar {
   width: 70px;
 }
 
-.content-area {
+.content-scrollable {
   flex: 1;
   padding: 15px;
-  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  /* ONLY this area scrolls */
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar-collapsed .content-area {
-  margin-left: 0;
+/* Helper to manage sidebar toggle state via class on container if needed, 
+   currently managed via component logic binding [class.sidebar-collapsed] */
+:host ::ng-deep .sidebar-collapsed app-sidebar {
+  width: 70px;
 }

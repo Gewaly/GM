@@ -1,5 +1,9 @@
-footer{
+footer {
   height: 42px;
-  background-color: var(--bg-color2);
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-top: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   color: var(--text-color);
 }

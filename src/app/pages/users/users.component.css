@@ -1,0 +1,56 @@
+/* Specific styling for User Cards - Transparent and subtle */
+:host ::ng-deep .p-card {
+    background: transparent !important;
+    /* Fully transparent as requested */
+    /* Remove backdrop-filter if 'fully transparent' means seeing background clearly without blur, 
+     but slightly frosted usually looks better. User asked for "page background remains visible". 
+     I will remove blur to ensure maximum visibility, or keep it very subtle.
+     "Liquid glass" usually implies some refraction/blur, but "fully transparent" implies none.
+     I'll stick to transparent background with NO blur to strictly follow "fully transparent" 
+     but keep the border/shadow for definition. */
+    backdrop-filter: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Soft, light shadow */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 16px;
+}
+
+:host ::ng-deep .dark-theme .p-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    /* Slightly stronger shadow for dark mode */
+}
+
+:host ::ng-deep .p-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Style 'View Details' Button - Glassy but clean */
+:host ::ng-deep .p-button.p-button-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    backdrop-filter: blur(4px);
+    /* Keep slight blur on button for contrast */
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-button.p-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+:host ::ng-deep .dark-theme .p-button.p-button-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+:host ::ng-deep .dark-theme .p-button.p-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

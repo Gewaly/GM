@@ -1,8 +1,8 @@
-.header{
-    background-color: var(--bg-color2);
-  color: var(--text-color);
-}
-*{
-  background-color: var(--bg-color2);
+.header {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   color: var(--text-color);
 }

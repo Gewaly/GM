@@ -1,6 +1,12 @@
 .sidebar {
-  background-color: var(--bg-color2);
-  height: calc(100vh - 97px);
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  /* Stronger blur for sidebar */
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-right: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  height: 100%;
+  /* Height is now controlled by flex parent */
 }
 
 .sidebar .menu-text {
@@ -15,12 +21,13 @@
 :host-context(.sidebar-collapsed) .menu-text {
   opacity: 0;
 }
-a{
+
+a {
   text-decoration: none;
-color: var(--text-color);
-cursor: pointer;
-}
-.link{
+  color: var(--text-color);
   cursor: pointer;
 }
 
+.link {
+  cursor: pointer;
+}

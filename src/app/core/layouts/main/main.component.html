@@ -1,11 +1,18 @@
-<app-header (menuToggle)="toggleSidebar()"></app-header>
+<app-particles-background></app-particles-background>
 
-<div class="main-wrapper" [class.sidebar-collapsed]="isCollapsed">
-  <app-sidebar></app-sidebar>
+<div class="app-layout-container" [class.sidebar-collapsed]="isCollapsed">
+  <div class="layout-header">
+    <app-header (menuToggle)="toggleSidebar()"></app-header>
+  </div>
 
-  <div class="content-area">
-    <router-outlet></router-outlet>
+  <div class="layout-body">
+    <app-sidebar></app-sidebar>
+    <main class="content-scrollable">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <div class="layout-footer">
+    <app-footer></app-footer>
   </div>
 </div>
-
-<app-footer></app-footer>

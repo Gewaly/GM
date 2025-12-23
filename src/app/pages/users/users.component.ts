@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-users',
@@ -15,10 +16,11 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [CardModule, Button, CommonModule,
     AvatarModule,
-    ButtonModule],
+    ButtonModule, SkeletonModule],
 })
 export class UsersComponent implements OnInit {
   users!: UserResponse[];
+  loading: boolean = true;
   constructor(private _AuthService: AuthService, private router: Router) { }
 
 
@@ -26,13 +28,16 @@ export class UsersComponent implements OnInit {
     this.loadUsers();
   }
   loadUsers() {
+    this.loading = true;
     this._AuthService.getUsers().subscribe({
       next: (res: any) => {
         this.users = res.users;
+        this.loading = false;
         console.log(this.users);
       },
       error: (err) => {
         console.log(err);
+        this.loading = false;
       }
     })
   }
