@@ -87,3 +87,20 @@ body {
 .p-card .p-card-footer {
   background: transparent !important;
 }
+
+/* Dark Theme Dropdown Overrides */
+.dark-theme .dropdown-menu {
+  background-color: var(--bg-color2);
+  color: var(--text-color);
+  border-color: var(--glass-border);
+}
+
+.dark-theme .dropdown-item {
+  color: var(--text-color);
+}
+
+.dark-theme .dropdown-item:hover,
+.dark-theme .dropdown-item:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+}
