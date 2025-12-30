@@ -20,6 +20,25 @@
   --backdrop-blur: blur(10px);
 }
 
+::-webkit-scrollbar {
+  height: 2px;
+  width: 10px;
+  background-color: #f7f7f7;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: #2253d0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3c62c4;
+}
+
 /* Dark Theme */
 .dark-theme {
   --bg-color: #121212;

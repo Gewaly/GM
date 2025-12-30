@@ -73,7 +73,7 @@ export class ParticlesBackgroundComponent implements OnInit, OnDestroy {
             const y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
             const directionX = (Math.random() * 2) - 1; // -1 to 1
             const directionY = (Math.random() * 2) - 1; // -1 to 1
-            const color = '#8C55AA'; // Primary color based on theme preference, or generic
+            const color = '#2196f3'; // Blue color
 
             this.particles.push(new Particle(x, y, directionX, directionY, size, color));
         }
@@ -103,13 +103,28 @@ export class ParticlesBackgroundComponent implements OnInit, OnDestroy {
 
                 if (distance < (this.connectionDistance * this.connectionDistance)) {
                     opacityValue = 1 - (distance / (this.connectionDistance * this.connectionDistance));
-                    this.ctx.strokeStyle = 'rgba(140, 85, 170, ' + opacityValue + ')'; // Use theme color
+                    this.ctx.strokeStyle = 'rgba(33, 150, 243, ' + opacityValue + ')'; // Blue
                     this.ctx.lineWidth = 1;
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[a].x, this.particles[a].y);
                     this.ctx.lineTo(this.particles[b].x, this.particles[b].y);
                     this.ctx.stroke();
                 }
+            }
+
+            // Connect to mouse
+            const dxMouse = this.particles[a].x - this.mouse.x;
+            const dyMouse = this.particles[a].y - this.mouse.y;
+            const distanceMouse = dxMouse * dxMouse + dyMouse * dyMouse;
+
+            if (distanceMouse < (this.mouseConnectionDistance * this.mouseConnectionDistance)) {
+                opacityValue = 1 - (distanceMouse / (this.mouseConnectionDistance * this.mouseConnectionDistance));
+                this.ctx.strokeStyle = 'rgba(33, 150, 243, ' + opacityValue + ')';
+                this.ctx.lineWidth = 1;
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.particles[a].x, this.particles[a].y);
+                this.ctx.lineTo(this.mouse.x, this.mouse.y);
+                this.ctx.stroke();
             }
         }
     }

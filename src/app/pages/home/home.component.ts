@@ -4,11 +4,14 @@ import { RouterModule } from '@angular/router';
 
 
 
+import { ParticlesBackgroundComponent } from '../../shared/components/particles-background/particles-background.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule,
     RouterModule,
+    ParticlesBackgroundComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],

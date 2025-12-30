@@ -31,7 +31,7 @@
 
 /* Style 'View Details' Button - Glassy but clean */
 :host ::ng-deep .p-button.p-button-secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.89);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-color);
     backdrop-filter: blur(4px);

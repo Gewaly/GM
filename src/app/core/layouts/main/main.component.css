@@ -32,13 +32,16 @@ app-sidebar {
   height: 100%;
   transition: width 0.3s ease-in-out;
   overflow-y: auto;
+  overflow-x: hidden;
+  /* Fix horizontal scroll */
   /* Independent scroll for sidebar if needed */
   border-right: 1px solid var(--glass-border);
   flex-shrink: 0;
 }
 
 .sidebar-collapsed app-sidebar {
-  width: 70px;
+  width: 80px;
+  /* Slightly wider for comfortable icon spacing */
 }
 
 .content-scrollable {

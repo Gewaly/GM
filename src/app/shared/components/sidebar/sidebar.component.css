@@ -6,6 +6,8 @@
   border-right: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   height: 100%;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
   /* Height is now controlled by flex parent */
 }
 

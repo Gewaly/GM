@@ -27,7 +27,7 @@
 
 .profile-header {
   /* Removed solid gradient, using a subtle glass effect for the header part if needed, or just transparent */
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.795);
   backdrop-filter: blur(5px);
   color: var(--text-color);
   text-align: center;
