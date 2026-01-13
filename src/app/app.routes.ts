@@ -47,6 +47,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/dashboard/dashboard.component').then((m) => m.DashboardComponent),
       },
+      {
+        path: 'drag',
+        loadComponent: () =>
+          import('./pages/drag/drag.component').then((m) => m.DragComponent),
+      },
 
     ]
   },
