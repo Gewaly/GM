@@ -1,4 +1,4 @@
-# GS (Gewaly System)
+# GS
 
 This project is a modern web application built with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20, featuring a rich UI powered by DevExtreme and PrimeNG.
 
