@@ -1,0 +1,16 @@
+<label for="formfile" class="form-label">Upload File</label>
+<input type="file" class="form-control" id="formfile" (change)="onFileChange($event)" [(ngModel)]="inputData">
+
+<div class="row gap-3 justify-content-between">
+    @for(file of uploadFileNames; track $index){
+        <div class="card col-md-3">
+        <img [src]="fileNameUrl + file" width="150" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-context">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+          <button class="btn btn-primary" (click)="downloadFile(file)">Download</button>
+        </div>
+      </div>
+
+    }
+</div>

@@ -52,6 +52,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/drag/drag.component').then((m) => m.DragComponent),
       },
+      {
+        path: 'download&upload',
+        loadComponent: () =>
+          import('./pages/download/download.component').then((m) => m.DownloadComponent),
+      },
 
     ]
   },
